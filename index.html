@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D&D Character Forge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'fantasy-dark': '#1a1818',
+              'fantasy-paper': '#e3dacf',
+              'fantasy-accent': '#8a2be2',
+              'dnd-red': '#8B0000',
+              'parchment': '#f5e6d3',
+              'parchment-dark': '#d4c5b0'
+            },
+            fontFamily: {
+              serif: ['Georgia', 'Cambria', 'Times New Roman', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #121212;
+        color: #e3dacf;
+      }
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1818; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #444; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+      
+      /* PRINT STYLES FOR A4 */
+      @media print {
+        @page {
+          size: A4 portrait;
+          margin: 0;
+        }
+        body {
+          background-color: white;
+          color: black;
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+        .no-print { 
+          display: none !important; 
+        }
+        .print-page {
+          width: 210mm;
+          height: 296mm; /* Slightly less than 297 to prevent bleed */
+          padding: 10mm;
+          margin: 0 auto;
+          background-color: white;
+          overflow: hidden;
+          page-break-after: always;
+          position: relative;
+          box-shadow: none !important;
+          border: none !important;
+        }
+        .print-page:last-child {
+          page-break-after: auto;
+        }
+        /* Reset utility styles for print */
+        .shadow-2xl, .shadow-lg, .shadow-md, .shadow-sm {
+          box-shadow: none !important;
+        }
+        .bg-stone-100, .bg-stone-50, .bg-stone-200\/50 {
+          background-color: #f5f5f4 !important; /* Ensure light grays print */
+        }
+        /* Force borders */
+        .border-stone-300, .border-stone-400 {
+          border-color: #a8a29e !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "html2canvas": "https://jspm.dev/html2canvas",
+    "jspdf": "https://jspm.dev/jspdf"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

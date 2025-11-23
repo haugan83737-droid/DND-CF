@@ -1,0 +1,5 @@
+{
+  "name": "D&D Character Forge (dnd.su edition)",
+  "description": "A comprehensive character builder using dnd.su data, homebrew support, and Gemini AI for backstory/portrait generation.",
+  "requestFramePermissions": []
+}
